@@ -1,0 +1,106 @@
+.filter {
+    padding: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #454545;
+  
+    &__select {
+      position: relative;
+      display: flex;
+      width: 20em;
+      height: 3em;
+  
+      border-radius:0.5rem;
+      overflow: hidden;
+      border: 2px solid #454545;
+      font-weight: 600;
+  
+      select {
+        padding: 0 1rem;
+        outline: none;
+        appearance: none;
+        border: 0;
+        flex: 1;
+  
+        color: #fff;
+        background-color: #f9f9f9;
+  
+        cursor: pointer;
+      }
+  
+      &::after {
+        position: absolute;
+        content: "\25BC";
+        padding: 1em;
+        content: "\25BC";
+  
+        color: #fff;
+        top: 0;
+        right: -4px;
+        height: 100%;
+  
+        background-color: #454545;
+        transition: 0.25s all ease;
+        pointer-events: none;
+  
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  
+  .theme-toggler {
+    display: flex;
+    align-items: center;
+  
+    &__checkbox {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+  
+    &__checkbox:checked + label {
+      background-color: #fff;
+    }
+  
+    &__checkbox:checked + label::after {
+      left: calc(100% - 3px);
+      transform: translateX(-100%);
+    }
+  
+    &__label {
+      position: relative;
+      width: 54px;
+      height: 29px;
+      background: #1e1e1e;
+      display: block;
+      border-radius: 100px;
+      cursor: pointer;
+  
+      transition: background-color 0.25s ease-in-out;
+      border: 2px solid #454545;
+      text-indent: -9999px;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: calc(100% - 6px);
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.3s;
+      }
+  
+      &:active::after {
+        width: 40px;
+      }
+    }
+  }
