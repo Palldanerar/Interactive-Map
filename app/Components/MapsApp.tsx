@@ -9,7 +9,7 @@ import eventsData from "@/historyEvents";
 import FlyToMarker from './FyToMarker';
 import Filter from './Filter';
 
-const position: [number, number] = [56.328624, 44.002842]
+const startPosition: [number, number] = [ 55.751999,37.617734]
 const emptyStar = <i className="fa-regular fa-star"></i>;
 const fullStar = (
     <i
@@ -68,7 +68,7 @@ const MapsApp = () => {
             <div className="map-content flex flex-col gap-6 h-full">
                 <Filter setSelectedCategory={setSelectedCategory} />
                 {/*@ts-ignore*/}
-                <MapContainer center={position} className="map-container" zoom={13}>
+                <MapContainer center={startPosition} className="map-container" zoom={13} >
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                     {eventsData
                         .filter(
